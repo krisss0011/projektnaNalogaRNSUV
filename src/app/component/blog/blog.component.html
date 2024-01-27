@@ -1,0 +1,19 @@
+@if(title){
+    <h1>{{ title }}</h1>
+}
+
+@if(title){
+    <h1>Written by: {{ author }}</h1>
+}
+
+@if(content){
+    <p>{{ content }} </p>
+}
+
+@for(i of images; track i.image.link){
+    <img [src]="i.image.link" [alt]="i.image.description"/>
+}
+
+@if(currentlyLoggedIn === author){
+<button (click)="delete()">Izbriši</button>
+}

@@ -1,0 +1,3 @@
+@for (blog of blogs; track blog.id) {
+    <a [routerLink]="['/blog', blog.id]">{{blog.title}}</a>
+}

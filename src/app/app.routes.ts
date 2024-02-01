@@ -7,11 +7,11 @@ import { NewPostComponent } from './component/new-post/new-post.component';
 import { UploadImageComponent } from './component/upload-image/upload-image.component';
 
 export const routes: Routes = [
-    { path: "blog/:id", component: BlogComponent },
-    { path: "blogs", component: BlogListsComponent },
-    { path: "upload", component: UploadImageComponent },
-    { path: "new-post", component: NewPostComponent },
-    { path: "sign-up", component: SignUpComponent },
-    { path: "sign-in", component: SignInComponent },
-    { path: "**", component: BlogListsComponent },
+  { path: 'blog/:id', component: BlogComponent },
+  { path: 'blogs', component: BlogListsComponent },
+  { path: 'upload/:id', component: UploadImageComponent },
+  { path: 'new-post', component: NewPostComponent },
+  { path: 'sign-up', component: SignUpComponent },
+  { path: 'sign-in', component: SignInComponent },
+  { path: '**', component: BlogListsComponent },
 ];

@@ -1,19 +1,35 @@
-@if(title){
-    <h1>{{ title }}</h1>
+@if (title) {
+  <h1>{{ title }}</h1>
 }
 
-@if(title){
-    <h1>Written by: {{ author }}</h1>
+@if (title) {
+  <h5>Written by: {{ author }}</h5>
 }
 
-@if(content){
-    <p>{{ content }} </p>
+@if (content) {
+  <p>{{ content }}</p>
 }
 
-@for(i of images; track i.image.link){
-    <img [src]="i.image.link" [alt]="i.image.description"/>
+@for (image of images; track image) {
+  <img [src]="image" />
 }
-
-@if(currentlyLoggedIn === author){
-<button (click)="delete()">Izbriši</button>
+<br /><br />
+@if (currentlyLoggedIn === author) {
+  <button
+    class="btn btn-secondary btn-lg active"
+    role="button"
+    (click)="delete()"
+  >
+    Izbriši
+  </button>
+}
+<br />
+<br />
+@if (currentlyLoggedIn === author) {
+  <a
+    class="btn btn-primary btn-lg active"
+    role="button"
+    [routerLink]="['/upload', this.blogId]"
+    >Naloži</a
+  >
 }

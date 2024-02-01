@@ -1,3 +1,10 @@
 @for (blog of blogs; track blog.id) {
-    <a [routerLink]="['/blog', blog.id]">{{blog.title}}</a>
+  <div class="card" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ blog.title }}</h5>
+      <a class="btn btn-primary" [routerLink]="['/blog', blog.id]"
+        >Poglej {{ blog.title }}</a
+      >
+    </div>
+  </div>
 }

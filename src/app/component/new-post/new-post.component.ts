@@ -8,21 +8,24 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [FormsModule],
   templateUrl: './new-post.component.html',
-  styleUrl: './new-post.component.scss'
+  styleUrl: './new-post.component.scss',
 })
 export class NewPostComponent {
-  content?: string
-  title?: string
+  content?: string;
+  title?: string;
 
-  constructor(private supabase: SupabaseService, private router: Router){}
+  constructor(
+    private supabase: SupabaseService,
+    private router: Router,
+  ) {}
 
-  newPost(){
-    if(this.title){
-      this.supabase.newBlog(this.title, this.content).subscribe(response => {
-        if(response.error === null){
-          this.router.navigate(['blogs'])
+  newPost() {
+    if (this.title) {
+      this.supabase.newBlog(this.title, this.content).subscribe((response) => {
+        if (response.error === null) {
+          this.router.navigate(['blogs']);
         }
-      })
+      });
     }
   }
 }
